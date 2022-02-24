@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.chatoy.test.ChatoyTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-02-21T13:57:00" hostname="DESKTOP-9J0NDSP" time="0.049">
+  <properties/>
+  <testcase name="startTest()" classname="com.chatoy.test.ChatoyTest" time="0.049"/>
+  <system-out><![CDATA[-----테스트 시작-----
+연결 요청을 기다리는 중...
+0.0.0.0/0.0.0.0
+서버의 연결 중.... (연결 중인 서버: 59.17.200.69)
+[10:57:00]클라이언트(/59.17.200.69) 접속
+연결 요청을 기다리는 중...
+0.0.0.0/0.0.0.0
+SERVER MSG: 서버로부터 메시지가 전송되었습니다. 
+연결 종료
+-----테스트 종료-----
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
