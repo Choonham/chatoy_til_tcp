@@ -49,8 +49,11 @@ public class TcpServerController {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        return "{\"message\":\"" + message + "\"}";
+        if(message != null){
+            return "{\"result\": \"1\", \"message\":\"" + message + "\"}";
+        } else {
+            return "{\"result\": \"0\"}";
+        }
 
     }
 }

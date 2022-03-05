@@ -42,8 +42,8 @@ public class TcpClientServiceImpl implements TcpClientService {
         String time = f.format(d); // Date에 선언한 포맷 적용
 
         try{
-            ServerSideStreamVault.out = new DataOutputStream(this.socket.getOutputStream());
-            ServerSideStreamVault.out.writeUTF(sender+"(" + time + "): " + message + "</br>");
+            DataOutputStream o = new DataOutputStream(this.socket.getOutputStream());
+            o.writeUTF(sender+"(" + time + "): " + message + "</br>");
             rtnVal = 1;
         } catch (Exception e){
             rtnVal = 0;

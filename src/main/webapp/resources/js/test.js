@@ -3,9 +3,10 @@ getIp();
 $(document).ready(function () {
     let inputIp = $("#ip").data("ip");
 
-    /*$(document).on('click', '#startChat', function () {
-        setInterval(chatInterval, 3000);
-    });*/
+    $(document).on('click', '#startChat', function () {
+        setInterval(chatInterval, 1000);
+
+    });
 
     $(document).on('click', '#connect', function () {
         let to = $("#serverIp").val();
@@ -41,7 +42,7 @@ $(document).ready(function () {
 
     $(document).on('click', '#sendMessage', function () {
         let message = $("#messageInput").val();
-        let sender = $("#ip").text();
+        let sender = $("#ip").attr('data-ip');
         let userID = $("#status").attr('data-id');
         $.ajax({
             url: "/client/sendMessage.do" , //컨트롤러 URL
@@ -83,10 +84,11 @@ function chatInterval() {
             async: false,
             dataType: 'json',
             type: 'POST',
-            timeout: 2000,
             success: function (data) {
-                $("#messageBox").empty();
-                $("#messageBox").append(data.message);
+                if(data.result == 1) {
+                    $("#messageBox").empty();
+                    $("#messageBox").append(data.message);
+                }
             },
             error: function (jqXHR) {
                 console.log(jqXHR);

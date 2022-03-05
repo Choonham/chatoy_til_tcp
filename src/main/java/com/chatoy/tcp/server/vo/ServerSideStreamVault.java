@@ -8,6 +8,7 @@ import javax.annotation.Resource;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.net.Socket;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 @Component
@@ -16,4 +17,7 @@ public class ServerSideStreamVault {
     public static DataOutputStream out;
     public static DataInputStream in;
     public static String messageVault = "";
+    public static ArrayList<Byte> messageVaultByte = new ArrayList<>();
+    public static HashMap<String, Socket> socketMap = new HashMap<>();
+
 }
