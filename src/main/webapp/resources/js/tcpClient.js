@@ -5,7 +5,6 @@ $(document).ready(function () {
 
     $(document).on('click', '#startChat', function () {
         setInterval(chatInterval, 1000);
-
     });
 
     $(document).on('click', '#connect', function () {
@@ -13,7 +12,7 @@ $(document).ready(function () {
         let port = $("#serverPort").val();
 
         $.ajax({
-            url: "/client/tcp.do" , //컨트롤러 URL
+            url: "/tcpClient/connect.do" , //컨트롤러 URL
             data: {
                 ip: to,
                 port: port
@@ -45,7 +44,7 @@ $(document).ready(function () {
         let sender = $("#ip").attr('data-ip');
         let userID = $("#status").attr('data-id');
         $.ajax({
-            url: "/client/sendMessage.do" , //컨트롤러 URL
+            url: "/tcpClient/sendMessage.do" , //컨트롤러 URL
             data: {
                 message: message,
                 sender: sender,
@@ -76,7 +75,7 @@ $(document).ready(function () {
 function chatInterval() {
         console.log(123);
         $.ajax({
-            url: "/server/showMessage.do" , //컨트롤러 URL
+            url: "/tcpServer/showMessage.do" , //컨트롤러 URL
             data: {},
             beforeSend: function(xhr) {
                 xhr.setRequestHeader("X-CSRF-TOKEN", $('#_csrf').val());

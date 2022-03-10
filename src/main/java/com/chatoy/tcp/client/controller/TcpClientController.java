@@ -12,13 +12,13 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Controller
-@RequestMapping(value = "/client")
+@RequestMapping(value = "/tcpClient")
 public class TcpClientController {
 
     @Autowired
     TcpClientService tcpClientService;
 
-    @RequestMapping(value = "/tcp.do", produces = "application/json; charset=utf8")
+    @RequestMapping(value = "/connect.do", produces = "application/json; charset=utf8")
     @ResponseBody
     public String connect(String ip, String port) {
         String rtnVal = "";

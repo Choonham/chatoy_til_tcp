@@ -7,6 +7,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class TestController {
     @RequestMapping("/index.do")
     public String test() {
-        return "index";
+        return "tcpClient";
+    }
+
+    @RequestMapping("/index2.do")
+    public String test2() {
+        return "udpClient";
     }
 }
